@@ -11,14 +11,17 @@ import com.books.dubbo.demo.api.GreetingService;
 public class ApiProvider {
 
 	public static void main(String[] args) throws IOException {
+
 		// 1.创建ServiceConfig实例
 		ServiceConfig<GreetingService> serviceConfig = new ServiceConfig<GreetingService>();
+
 		// 2.设置应用程序配置
 		serviceConfig.setApplication(new ApplicationConfig("first-dubbo-provider"));
 
 		// 3.设置服务注册中心信息
 		RegistryConfig registryConfig = new RegistryConfig("zookeeper://127.0.0.1:2181");
 		serviceConfig.setRegistry(registryConfig);
+
 		// 4.设置接口与实现类
 		serviceConfig.setInterface(GreetingService.class);
 		serviceConfig.setRef(new GreetingServiceImpl());
