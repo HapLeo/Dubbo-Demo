@@ -11,10 +11,18 @@
 	<name>Demo</name>
 	<url>http://maven.apache.org</url>
 
+	<modules>
+		<module>Provider</module>
+		<module>Consumer</module>
+		<module>Sdk</module>
+	</modules>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<dubbo.version>2.7.1</dubbo.version>
 		<dubbo.zk.version>2.7.0</dubbo.zk.version>
+		<java.version>11</java.version>
+		<maven.compiler.compilerVersion>11</maven.compiler.compilerVersion>
 	</properties>
 
 	<dependencies>
@@ -41,15 +49,17 @@
 		<dependency>
 			<groupId>org.apache.zookeeper</groupId>
 			<artifactId>zookeeper</artifactId>
-			<version>3.4.5</version>
+			<version>3.4.8</version>
 			<type>pom</type>
-		</dependency>  
+		</dependency>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.12</version>
+		</dependency>
 
 	</dependencies>
-	<modules>
-		<module>Provider</module>
-		<module>Consumer</module>
-		<module>Sdk</module>
-	</modules>
+
 </project>
          

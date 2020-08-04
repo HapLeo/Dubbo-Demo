@@ -1,36 +1,23 @@
 package com.books.dubbo.demo.api;
 
+import lombok.Data;
+
 import java.io.Serializable;
 
+/**
+ * POJO的返回值类型
+ * @param <T>
+ */
+@Data
 public class Result<T> implements Serializable {
 
-	private static final long serialVersionUID = 1L;
-	private T data;
+    private static final long serialVersionUID = 1L;
 
-	public T getData() {
-		return data;
-	}
 
-	public void setData(T data) {
-		this.data = data;
-	}
+    private boolean sucess;
 
-	public boolean isSucess() {
-		return sucess;
-	}
+    private String msg;
 
-	public void setSucess(boolean sucess) {
-		this.sucess = sucess;
-	}
+    private T data;
 
-	public String getMsg() {
-		return msg;
-	}
-
-	public void setMsg(String msg) {
-		this.msg = msg;
-	}
-
-	private boolean sucess;
-	private String msg;
 }
